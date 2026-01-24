@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Utilities - Projects</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            max-width: 700px;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .project-card h2 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        .project-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .project-card a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .project-card a:hover {
+            background: #764ba2;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Python Utilities</h1>
+        <p class="subtitle">My former projects</p>
+        
+        <div class="project-card">
+            <h2>🎯 Rubber Sheet Simulation</h2>
+            <p>
+                An interactive simulation of a rubber sheet using Newtonian equations and discrete integrals. 
+                Built with HTML5 Canvas and JavaScript, this simulation allows you to create dynamic rubber 
+                sheet networks by clicking on the canvas. Watch as the mass points interact through forces 
+                and create beautiful wave-like patterns!
+            </p>
+            <a href="rubbersimulation/index.html">Launch Simulation →</a>
+        </div>
+        
+        <div class="footer">
+            <p>View the source code on <a href="https://github.com/mkrzyzan/pythonutilities" style="color: #667eea;">GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>
