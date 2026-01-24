@@ -2,11 +2,16 @@
 My former projects
 ## rubber simulation
 ### Whats that
-Simulation of the rubber sheet. I used the basic concepts of Newtonian equations and discrete integrals in this project 
-Module Tkainter has been used to show up the results of the simulation on the screen.
+Simulation of the rubber sheet. I used the basic concepts of Newtonian equations and discrete integrals in this project.
+The application is now a single HTML5 file with JavaScript, using HTML5 Canvas to show the results of the simulation on the screen.
 ![my image](https://github.com/mkrzyzan/pythonutilities/blob/master/rubbersimulation/rubbersheet.png)
-### Build/run  (python3.5)
+### How to run
 ```
 clone git@github.com:mkrzyzan/pythonutilities.git
-python3 pythonutilities/rubbersimulation/moldyn.py
 ```
+Then open `rubbersimulation/index.html` in any modern web browser (Chrome, Firefox, Safari, Edge).
+
+Click anywhere on the canvas to create a new rubber sheet simulation!
+
+### Legacy Python version
+The original Python/Tkinter version is still available in `moldyn.py` for reference.
