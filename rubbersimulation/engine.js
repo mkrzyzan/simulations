@@ -113,8 +113,8 @@ function computeAttenuation(m) {
 }
 
 function computeGravity(m) {
-    m.fx += 0;
-    m.fy += 100;
+    m.fx += 0;  // No horizontal gravity
+    m.fy += 100;  // Vertical gravity (downward)
 }
 
 // Main animation frame
