@@ -52,6 +52,11 @@
         // Mass points container
         let p = [];
 
+        // Constants for visualization
+        const MASS_POINT_SIZE = 5;
+        const MASS_POINT_CENTER_OFFSET = 2;
+        const LINK_CENTER_OFFSET = 3;
+
         // Mass point class
         class MassPoint {
             constructor(rx, ry, vx = 0, vy = 0, fx = 0, fy = 0, links = []) {
@@ -68,7 +73,7 @@
             showUp() {
                 // Draw the mass point
                 ctx.fillStyle = 'black';
-                ctx.fillRect(this.rx, this.ry, 5, 5);
+                ctx.fillRect(this.rx, this.ry, MASS_POINT_SIZE, MASS_POINT_SIZE);
 
                 // Draw links
                 ctx.strokeStyle = 'red';
@@ -76,8 +81,8 @@
                 for (let linkIndex of this.links) {
                     if (p[linkIndex]) {
                         ctx.beginPath();
-                        ctx.moveTo(p[linkIndex].rx + 2, p[linkIndex].ry + 2);
-                        ctx.lineTo(this.rx + 3, this.ry + 3);
+                        ctx.moveTo(p[linkIndex].rx + MASS_POINT_CENTER_OFFSET, p[linkIndex].ry + MASS_POINT_CENTER_OFFSET);
+                        ctx.lineTo(this.rx + LINK_CENTER_OFFSET, this.ry + LINK_CENTER_OFFSET);
                         ctx.stroke();
                     }
                 }
