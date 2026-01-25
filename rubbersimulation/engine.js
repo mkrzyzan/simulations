@@ -4,15 +4,6 @@
 const canvas = document.getElementById('simulationCanvas');
 const ctx = canvas.getContext('2d');
 
-// Draw initial reference lines
-ctx.strokeStyle = 'yellow';
-ctx.lineWidth = 2;
-ctx.beginPath();
-ctx.moveTo(0, 300);
-ctx.lineTo(300, 300);
-ctx.lineTo(300, 0);
-ctx.stroke();
-
 // Mass points container
 let p = [];
 
@@ -98,8 +89,8 @@ function computeForce(m) {
 function computeSpeed(m) {
     m.vx += 0.03 * m.fx;
     m.vy += 0.03 * m.fy;
-    if (m.rx > 300 || m.rx < 0) m.vx = 0;
-    if (m.ry > 300 || m.ry < 0) m.vy = 0;
+    if (m.rx > canvas.width || m.rx < 0) m.vx = 0;
+    if (m.ry > canvas.height || m.ry < 0) m.vy = 0;
 }
 
 function computePosition(m) {
@@ -122,15 +113,6 @@ function frame() {
     // Clear canvas
     ctx.fillStyle = '#aaaaaa';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Draw reference lines
-    ctx.strokeStyle = 'yellow';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(0, 300);
-    ctx.lineTo(300, 300);
-    ctx.lineTo(300, 0);
-    ctx.stroke();
 
     // Physics calculations
     p.forEach(clearForce);
