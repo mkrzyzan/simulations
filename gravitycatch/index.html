@@ -355,7 +355,9 @@
 
         // Check collisions
         function checkCollisions() {
-            balls.forEach((ball, ballIdx) => {
+            // Iterate backwards to safely remove items while iterating
+            for (let i = balls.length - 1; i >= 0; i--) {
+                const ball = balls[i];
                 if (!ball.caught && ball.y > canvas.height - 80) {
                     // Check if ball is within net range
                     const netLeft = netPosition - 60;
@@ -367,19 +369,22 @@
                         score += 10 * level;
                         updateScore();
                         
-                        // Apply force to net
-                        const netCenter = massPoints.length / 2;
+                        // Apply force to net at impact point
                         const impactPoint = Math.floor(((ball.x - netLeft) / (netRight - netLeft)) * massPoints.length);
                         if (impactPoint >= 0 && impactPoint < massPoints.length) {
                             massPoints[impactPoint].vy += 20;
                         }
                         
+                        // Remove ball after short delay
                         setTimeout(() => {
-                            balls.splice(ballIdx, 1);
+                            const idx = balls.indexOf(ball);
+                            if (idx > -1) {
+                                balls.splice(idx, 1);
+                            }
                         }, 200);
                     } else if (ball.y > canvas.height + 20) {
                         // Ball missed
-                        balls.splice(ballIdx, 1);
+                        balls.splice(i, 1);
                         lives--;
                         updateLives();
                         
@@ -388,7 +393,7 @@
                         }
                     }
                 }
-            });
+            }
         }
 
         // Update score display
@@ -430,6 +435,7 @@
             document.getElementById('gameOver').style.display = 'none';
             
             createNet();
+            requestAnimationFrame(gameLoop); // Restart animation loop
         }
 
         // Keyboard controls
@@ -446,14 +452,10 @@
         let lastSpawn = 0;
         function gameLoop(timestamp) {
             if (!gameActive) {
-                requestAnimationFrame(gameLoop);
-                return;
+                return; // Don't request next frame when game is not active
             }
 
             // Clear canvas
-            ctx.fillStyle = 'linear-gradient(180deg, #87ceeb 0%, #ffffff 100%)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
             // Draw sky gradient
             const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
             gradient.addColorStop(0, '#87ceeb');
