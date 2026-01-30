@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Catch - Physics Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎮 Gravity Catch</h1>
+        
+        <div class="game-info">
+            <div class="stat">
+                <div class="stat-label">Score</div>
+                <div class="stat-value" id="score">0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Lives</div>
+                <div class="stat-value" id="lives">5</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Level</div>
+                <div class="stat-value" id="level">1</div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="540" height="600"></canvas>
+
+        <div class="controls">
+            <h3>🎯 How to Play</h3>
+            <p><strong>← →</strong> Move the springy net left and right</p>
+            <p><strong>Goal:</strong> Catch falling balls with your elastic net!</p>
+            <p>Each caught ball scores points. Missing balls costs lives. The net uses real Newton physics!</p>
+        </div>
+
+        <div class="back-link">
+            <a href="../index.html">← Back to Projects</a>
+        </div>
+    </div>
+
+    <div class="game-over" id="gameOver">
+        <h2>Game Over!</h2>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

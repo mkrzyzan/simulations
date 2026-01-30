@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    max-width: 600px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    color: #1e3c72;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#gameCanvas {
+    display: block;
+    background: linear-gradient(180deg, #87ceeb 0%, #ffffff 100%);
+    border-radius: 10px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: none;
+}
+
+.controls {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff3cd;
+    border-radius: 10px;
+    border-left: 4px solid #ffc107;
+}
+
+.controls h3 {
+    color: #856404;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.controls p {
+    color: #856404;
+    margin: 5px 0;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #1e3c72;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.back-link a:hover {
+    background: #e9ecef;
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+}
+
+.game-over h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+}
+
+.game-over p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.game-over button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.game-over button:hover {
+    background: #45a049;
+}
